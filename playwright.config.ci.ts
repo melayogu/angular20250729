@@ -39,7 +39,7 @@ export default defineConfig({
   webServer: {
     command: 'npm run start',
     url: 'http://localhost:4200',
-    reuseExistingServer: !process.env['CI'], // 本地環境重用，CI環境重新啟動
+    reuseExistingServer: false, // CI環境讓Playwright管理服務器
     timeout: 120 * 1000, // 2分鐘超時
   },
 

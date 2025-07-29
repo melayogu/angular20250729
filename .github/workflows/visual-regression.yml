@@ -30,13 +30,6 @@ jobs:
     - name: Build Angular app
       run: npm run build
 
-    - name: Start Angular dev server
-      run: npm run start &
-
-    - name: Wait for server to be ready
-      run: |
-        timeout 60 bash -c 'until curl -f http://localhost:4200; do sleep 2; done'
-
     - name: Run visual regression tests
       run: npx playwright test --config=playwright.config.ci.ts
       env:

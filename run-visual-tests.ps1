@@ -12,7 +12,7 @@ $nodeProcesses = Get-Process -Name node -ErrorAction SilentlyContinue
 if ($nodeProcesses) {
     Write-Host "⚠️  檢測到正在運行的Node.js進程" -ForegroundColor Yellow
     Write-Host "   進程數量: $($nodeProcesses.Count)" -ForegroundColor Yellow
-    
+
     $response = Read-Host "是否要停止這些進程? (y/N)"
     if ($response -eq 'y' -or $response -eq 'Y') {
         $nodeProcesses | Stop-Process -Force
