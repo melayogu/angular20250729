@@ -1,4 +1,8 @@
-﻿.letter-display-container {
+$letters = @('B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
+
+# CSS內容 (所有字母共用)
+$cssContent = @"
+.letter-display-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,4 +48,27 @@
   .big-letter {
     font-size: 8rem;
   }
+}
+"@
+
+foreach($letter in $letters) {
+    $letterLower = $letter.ToLower()
+
+    # HTML內容
+    $htmlContent = @"
+<div class="letter-display-container">
+  <div class="big-letter">$letter</div>
+  <a routerLink="/home" class="back-btn">回到首頁</a>
+</div>
+"@
+
+    # 創建HTML文件
+    $htmlPath = "letter-$letterLower\letter-$letterLower.component.html"
+    $htmlContent | Out-File -FilePath $htmlPath -Encoding UTF8
+
+    # 創建CSS文件
+    $cssPath = "letter-$letterLower\letter-$letterLower.component.css"
+    $cssContent | Out-File -FilePath $cssPath -Encoding UTF8
+
+    Write-Host "Updated $letter component files"
 }

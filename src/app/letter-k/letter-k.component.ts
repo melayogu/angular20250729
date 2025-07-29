@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-letter-k',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './letter-k.component.html',
   styleUrl: './letter-k.component.css'
 })
