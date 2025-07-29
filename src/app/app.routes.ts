@@ -1,3 +1,59 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { LetterAComponent } from './letter-a/letter-a.component';
+import { LetterBComponent } from './letter-b/letter-b.component';
+import { LetterCComponent } from './letter-c/letter-c.component';
+import { LetterDComponent } from './letter-d/letter-d.component';
+import { LetterEComponent } from './letter-e/letter-e.component';
+import { LetterFComponent } from './letter-f/letter-f.component';
+import { LetterGComponent } from './letter-g/letter-g.component';
+import { LetterHComponent } from './letter-h/letter-h.component';
+import { LetterIComponent } from './letter-i/letter-i.component';
+import { LetterJComponent } from './letter-j/letter-j.component';
+import { LetterKComponent } from './letter-k/letter-k.component';
+import { LetterLComponent } from './letter-l/letter-l.component';
+import { LetterMComponent } from './letter-m/letter-m.component';
+import { LetterNComponent } from './letter-n/letter-n.component';
+import { LetterOComponent } from './letter-o/letter-o.component';
+import { LetterPComponent } from './letter-p/letter-p.component';
+import { LetterQComponent } from './letter-q/letter-q.component';
+import { LetterRComponent } from './letter-r/letter-r.component';
+import { LetterSComponent } from './letter-s/letter-s.component';
+import { LetterTComponent } from './letter-t/letter-t.component';
+import { LetterUComponent } from './letter-u/letter-u.component';
+import { LetterVComponent } from './letter-v/letter-v.component';
+import { LetterWComponent } from './letter-w/letter-w.component';
+import { LetterXComponent } from './letter-x/letter-x.component';
+import { LetterYComponent } from './letter-y/letter-y.component';
+import { LetterZComponent } from './letter-z/letter-z.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'letter/A', component: LetterAComponent },
+  { path: 'letter/B', component: LetterBComponent },
+  { path: 'letter/C', component: LetterCComponent },
+  { path: 'letter/D', component: LetterDComponent },
+  { path: 'letter/E', component: LetterEComponent },
+  { path: 'letter/F', component: LetterFComponent },
+  { path: 'letter/G', component: LetterGComponent },
+  { path: 'letter/H', component: LetterHComponent },
+  { path: 'letter/I', component: LetterIComponent },
+  { path: 'letter/J', component: LetterJComponent },
+  { path: 'letter/K', component: LetterKComponent },
+  { path: 'letter/L', component: LetterLComponent },
+  { path: 'letter/M', component: LetterMComponent },
+  { path: 'letter/N', component: LetterNComponent },
+  { path: 'letter/O', component: LetterOComponent },
+  { path: 'letter/P', component: LetterPComponent },
+  { path: 'letter/Q', component: LetterQComponent },
+  { path: 'letter/R', component: LetterRComponent },
+  { path: 'letter/S', component: LetterSComponent },
+  { path: 'letter/T', component: LetterTComponent },
+  { path: 'letter/U', component: LetterUComponent },
+  { path: 'letter/V', component: LetterVComponent },
+  { path: 'letter/W', component: LetterWComponent },
+  { path: 'letter/X', component: LetterXComponent },
+  { path: 'letter/Y', component: LetterYComponent },
+  { path: 'letter/Z', component: LetterZComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
