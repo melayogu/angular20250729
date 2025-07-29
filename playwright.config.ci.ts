@@ -39,7 +39,7 @@ export default defineConfig({
   webServer: {
     command: 'npm run start',
     url: 'http://localhost:4200',
-    reuseExistingServer: false, // CI環境總是重新啟動服務器
+    reuseExistingServer: !process.env['CI'], // 本地環境重用，CI環境重新啟動
     timeout: 120 * 1000, // 2分鐘超時
   },
 

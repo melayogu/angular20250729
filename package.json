@@ -10,7 +10,7 @@
     "test:visual": "playwright test",
     "test:visual:ui": "playwright test --ui",
     "test:visual:update": "playwright test --update-snapshots",
-    "test:visual:ci": "playwright test --reporter=html,github",
+    "test:visual:ci": "playwright test --config=playwright.config.ci.ts",
     "test:visual:headed": "playwright test --headed"
   },
   "private": true,
