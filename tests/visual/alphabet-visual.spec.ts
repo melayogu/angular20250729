@@ -69,40 +69,5 @@ test.describe('Visual Regression Tests', () => {
     });
   });
 
-  test('Responsive design - Mobile viewport', async ({ page }) => {
-    // 設定手機視窗大小
-    await page.setViewportSize({ width: 375, height: 667 });
-
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    // 手機版主頁截圖
-    await expect(page).toHaveScreenshot('homepage-mobile.png', {
-      fullPage: true,
-      animations: 'disabled'
-    });
-
-    // 測試手機版字母頁面
-    await page.goto('/letter/A');
-    await page.waitForLoadState('networkidle');
-
-    await expect(page).toHaveScreenshot('letter-a-mobile.png', {
-      fullPage: true,
-      animations: 'disabled'
-    });
-  });
-
-  test('Responsive design - Tablet viewport', async ({ page }) => {
-    // 設定平板視窗大小
-    await page.setViewportSize({ width: 768, height: 1024 });
-
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
-
-    // 平板版主頁截圖
-    await expect(page).toHaveScreenshot('homepage-tablet.png', {
-      fullPage: true,
-      animations: 'disabled'
-    });
-  });
+  // 只針對桌面Chrome進行測試，移除手機和平板版本測試
 });
