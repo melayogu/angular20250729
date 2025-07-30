@@ -69,5 +69,60 @@ test.describe('Visual Regression Tests', () => {
     });
   });
 
+  test('Mona Lisa page should match baseline', async ({ page }) => {
+    await page.goto('/mona-lisa');
+
+    // 等待頁面完全載入
+    await page.waitForLoadState('networkidle');
+
+    // 等待圖片載入完成
+    await page.waitForSelector('.mona-lisa-img');
+
+    // 等待圖片實際載入完成
+    await page.evaluate(() => {
+      const img = document.querySelector('.mona-lisa-img') as HTMLImageElement;
+      if (img && !img.complete) {
+        return new Promise((resolve) => {
+          img.onload = resolve;
+          img.onerror = resolve;
+        });
+      }
+    });
+
+    // 驗證返回按鈕存在
+    await expect(page.locator('.back-button')).toBeVisible();
+
+    // 截圖比較
+    await expect(page).toHaveScreenshot('mona-lisa-page.png', {
+      fullPage: true,
+      animations: 'disabled'
+    });
+  });
+
+  test('Mona Lisa navigation functionality', async ({ page }) => {
+    // 測試從主頁導航到蒙娜麗莎頁面再返回
+    await page.goto('/home');
+
+    // 點擊蒙娜麗莎連結
+    await page.click('a[href="/mona-lisa"]');
+    await page.waitForLoadState('networkidle');
+
+    // 驗證在蒙娜麗莎頁面
+    await expect(page.locator('.mona-lisa-img')).toBeVisible();
+
+    // 點擊返回按鈕
+    await page.click('.back-button');
+    await page.waitForLoadState('networkidle');
+
+    // 驗證回到主頁
+    await expect(page.locator('h1')).toContainText('English Alphabet Navigation');
+
+    // 截圖記錄蒙娜麗莎導航流程
+    await expect(page).toHaveScreenshot('mona-lisa-navigation-back.png', {
+      fullPage: true,
+      animations: 'disabled'
+    });
+  });
+
   // 只針對桌面Chrome進行測試，移除手機和平板版本測試
 });
