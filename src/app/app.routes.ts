@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LetterAComponent } from './letter-a/letter-a.component';
 import { LetterBComponent } from './letter-b/letter-b.component';
+import { MonaLisaComponent } from './mona-lisa/mona-lisa.component';
 import { LetterCComponent } from './letter-c/letter-c.component';
 import { LetterDComponent } from './letter-d/letter-d.component';
 import { LetterEComponent } from './letter-e/letter-e.component';
@@ -31,6 +32,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'letter/A', component: LetterAComponent },
   { path: 'letter/B', component: LetterBComponent },
+  { path: 'mona-lisa', component: MonaLisaComponent },
   { path: 'letter/C', component: LetterCComponent },
   { path: 'letter/D', component: LetterDComponent },
   { path: 'letter/E', component: LetterEComponent },
